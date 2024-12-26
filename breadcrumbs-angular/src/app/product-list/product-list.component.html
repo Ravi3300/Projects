@@ -1,0 +1,25 @@
+<div>
+    <h1>Product list</h1>
+
+    <div class="text-center">
+        <h5>Trending Product</h5>
+    </div>
+
+    <div class="row">
+        <div class="col-3 mx-2 mt-2" *ngFor="let prod of trendingProduct.slice(0,16); let idx=index"
+            [routerLink]="['/product-list', prod.id]" style="    border: 1px solid;
+    border-radius: 12px;
+    background-color: grey;">
+            <div>
+                <img src="{{prod?.thumbnail}}" />
+            </div>
+            <div>
+                {{prod.title}}
+            </div>
+        </div>
+
+        <div>
+            <!-- <button class="btn btn-primary" routerLink="product">View All Product</button> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="popup-overlay" *ngIf="isVisible" (click)="close()">
+    <div class="popup-content">
+        <button class="close-btn" (click)="close()">✖</button>
+        <!-- <ng-content>ADAdd</ng-content> -->
+    </div>
+</div>
+
+
+
+<button (click)="popupOpen()">Launch PopUp</button>

@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>My Todo List</h3>
+    <form #taskForm="ngForm" (ngSubmit)="todoSubmit(taskForm)">
+        <div class="mb-3">
+            <label for="task" class="form-label">Task</label>
+            <input type="text" class="form-control" id="task" [(ngModel)]="taskForm.name" name="taskVal">
+            <div id="emailHelp" class="required-filed">Required Filed</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <hr />
+
+    <!-- Tabel Section  -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Complete</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of taskArray;let id= index">
+                <td>{{data?.task}}</td>
+                <td><input type="checkbox" (change)="checkMark(id)"></td>
+                <td><button type="submit" class="btn btn-danger" (click)="deleteTask(id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,19 @@
+<div>
+    <form>
+        <h4>mat-select</h4>
+        <mat-form-field>
+            <mat-label>Favorite food</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="food" multiple>
+                <mat-select-trigger>
+                    <!-- Customize the selected value display -->
+                    <span>You selected: {{ selectedValue }}</span>
+                </mat-select-trigger>
+                <input #multiSelect type="search" (input)="onInputChange($event)" />
+                <p *ngIf="filterArray.length == 0">Not Result fount</p>
+                <div *ngIf="filterArray.length != 0">
+                    <mat-option [value]="food.value" *ngFor="let food of filterArray">{{food.viewValue}}</mat-option>
+                </div>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+    <span class="container__title">Countdown Timer</span>
+
+    <div class="container__labels">
+        <p class="container__labels--label">Hours</p>
+        <p class="container__labels--label">Minutes</p>
+        <p class="container__labels--label">Seconds</p>
+    </div>
+
+    <div class="container__inputs">
+        <input type="number" placeholder="00" class="container__inputs--time" #hour />
+        <p class="container__inputs--colon">:</p>
+        <input type="number" placeholder="00" class="container__inputs--time" #minute />
+        <p class="container__inputs--colon">:</p>
+        <input type="number" placeholder="00" class="container__inputs--time" #sec />
+    </div>
+
+    <div class="container__btns">
+        <button class="btn start" (click)="startBtn()" #start>Start</button>
+        <button class="btn stop" (click)="pauseBtn()" #stop>Pause</button>
+        <button class="btn reset" (click)="resetBtn()" #reset>Reset</button>
+    </div>
+</div>

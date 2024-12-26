@@ -1,0 +1,12 @@
+<span>Total Price : {{cartService.getTotal()}}</span>
+<div class="container-fluid">
+    <div class="card mt-1" *ngFor="let cardData of cartService.getItems(); let id = index">
+        <div class="card-body">
+            <p>{{cardData?.name}}</p>
+            <p>{{cardData?.price}}</p>
+            <button class="btn btn-danger" (click)="deleteCard(cardData)">Delete</button>
+            <button (click)="addQunatity(cardData.id)">+</button>
+            <button (click)="decreaseQunatity(cardData.id)">-</button>
+        </div>
+    </div>
+</div>

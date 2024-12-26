@@ -1,0 +1,3 @@
+<h1 class="text-center" *ngIf="cardCount > 0">Meme UI</h1>
+<app-shimmer-ui *ngIf="cardCount <= 0"></app-shimmer-ui>
+<app-meme-card [cardData]="cardData" *ngIf="cardCount > 0"></app-meme-card>

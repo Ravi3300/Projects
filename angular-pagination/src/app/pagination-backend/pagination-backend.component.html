@@ -1,0 +1,19 @@
+<div *ngIf="totalPage > 0" class="row">
+    <div *ngFor="let data of pageData" class="col-3 card mx-4 mt-2 bg-grey"
+        style="border:1px solid; border-radius:12px; background-color:grey">
+        <span class="product__single">
+            <img src="{{data.thumbnail}}" alt="{{data.title}}" />
+            <div> {{data.title}}</div>
+        </span>
+    </div>
+</div>
+
+<div *ngIf="totalPage > 0" class="d-flex justify-content-center pagination mt-3">
+    <span (click)="prevPage()"> ◀️ </span>
+    <span *ngFor="let pageData of getPage()" class="mx-2" (click)="setNextPage(pageData)"
+        [ngStyle]="{'background-color': pageData == page ? 'blue' : 'white'}">
+        {{ pageData }}
+    </span>
+
+    <span (click)="nextPage()"> ▶️ </span>
+</div>

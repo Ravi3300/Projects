@@ -1,0 +1,13 @@
+<div class="d-flex">
+    <div *ngFor="let data of productList">
+        <div class="card" style="width: 18rem; margin-left: 12px;">
+            <div class="card-body mx-1">
+                <h5 class="card-title">{{data?.name}}</h5>
+                <p class="card-text">{{data.price}}</p>
+                <button (click)="addToCart(data)">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-cart></app-cart>
